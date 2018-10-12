@@ -7,7 +7,7 @@ na.fill <- function(df) {
   df <- as.data.frame(df)
   
   for( i in 4:ncol(df) ) {
-    df[,i] <- ifelse(is.na(df[,i]) , 0, df[,i] )
+    df[,i] <- ifelse(is.na(df[,i]) , 0, df[, i] )
   }
   
   return(df)
@@ -45,7 +45,7 @@ ap_load <- function(file) {
     
     ap_dt[1, which(is.na(ap_dt[1, ])) ] <- "전체결과"
     
-    colnames(ap_dt) <- c("prod_cd","prod_nm" ,"ymd",
+    colnames(ap_dt) <- c("prod_cd", "prod_nm", "ymd",
                          ap_dt[1, -c(1:3)] %>% paste0("|",ap_dt[2, -c(1:3)]) %>% trimws()
                          )
     
